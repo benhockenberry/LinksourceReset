@@ -4,6 +4,9 @@ Uses jQuery, which is linked in EBSCO's predefined header (we didn't need to add
 Adapted from Matthew Reidsma's techniques used for Grand Valley State University (GVSU)'s 360Link Link Resolver
 http://github.com/gvsulib/360Link-Reset
 
+Instructions:
+Insert this script into the footer of the library's LinkSource menu page via A-to-Z Admin.  
+
 Script by Ben Hockenberry, Systems Librarian, St. John Fisher College
 */
 
