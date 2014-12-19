@@ -10,13 +10,24 @@ Insert this script into the footer of the library's LinkSource menu page via A-t
 Script by Ben Hockenberry, Systems Librarian, St. John Fisher College
 */
 
+/*Variable Declarations*/
+var banner_image = '';
+var banner_full = 'http://www.sjfc.edu/library/include/getfulltext_header.png';
+var banner_mobile = 'http://www.sjfc.edu/library/include/getfulltext_header_mobile.png';
+
+/*
+Set a banner image that has higher text-to-full image ratio if on a small screen
+-- remove if you do not use a full-width banner --
+*/
 function get_banner() {
 	if ($(window).width() <= 600){
-		banner_image = 'http://www.sjfc.edu/library/include/getfulltext_header_mobile.png';
+		banner_image = banner_mobile;
 	} else {
-		banner_image = 'http://www.sjfc.edu/library/include/getfulltext_header.png';
+		banner_image = banner_full;
 	}
 }
+
+/*Change banner image if user changes screen size/orientation */
 $(window).resize(function() {
 	get_banner();
 	$('img#banner_image').attr('src',banner_image);
