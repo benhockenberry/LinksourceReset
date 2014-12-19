@@ -9,6 +9,7 @@ Insert this script into the footer of the library's LinkSource menu page via A-t
 
 Script by Ben Hockenberry, Systems Librarian, St. John Fisher College
 */
+$(function() {
 
 /*Variable Declarations*/
 var banner_image = '';
@@ -33,7 +34,6 @@ $(window).resize(function() {
 	$('img#banner_image').attr('src',banner_image);
 });
 
-$(function() {
  if(!($('.reviseRequestFormContainer')[0])){
     get_banner();
 	//on document ready, get the illiadform variable from the url
