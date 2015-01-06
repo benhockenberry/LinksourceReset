@@ -293,6 +293,13 @@ a.journal-button {
 	border: 0px solid #993333;
 	padding:1em;
 	}
+	.show_detail_toggle{
+	padding-left:0.4em;
+	font-size:0.5em;
+	color:#555555;
+	cursor:pointer;
+}
+
 	#citation_div h3 {
 		font-family: 'AlternateGothicFSNo3', Arial, sans-serif;font-size: 1em;font-weight: normal;margin: .3em 0;background-color: #004875;color:#ffffff; padding:0.2em;
 	}
