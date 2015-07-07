@@ -6,7 +6,7 @@ Script by Ben Hockenberry, Systems Librarian, St. John Fisher College
 
 Instructions:
 **IMPORTANT**
-1. Edit CSS and script to reference the section IDs used in your LinkSource Menu site (Use View Source, inspect, or Firebug to check them out).  If you don't make sure the ID numbers are right, *you won't see anything in your link resolver*.
+1. Edit CSS and script to reference the section IDs, like #3834_body and #3863_Section, used in *your* LinkSource Menu site (Use View Source, inspect, or Firebug to check them out).  If you don't make sure the ID numbers are right, *you won't see anything in your link resolver*.
 2. Upload the JS file to a web-accessible space.
 3. Add this to Edit Custom Header HTML in A-to-Z Admin's LinkSource Menu Customization (this zooms in for small devices)
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">

@@ -40,7 +40,6 @@ $(window).resize(function() {
 	 
 	 //Remove Ulrichsweb and Interlibrary loan links from main box
 	 $('#3863_Section').hide();
-	 $('#3878_Section').hide();
 	 //Build citation display into its own element, outside the table
 	 var citation_display = '<div id="citation_div"><h3>You searched for:</h3><p><span id="citation_title">&quot;' + $('#ctl00_ContentPlaceHolder1__citationArea__titleDisplay').html() + '&quot;</span><br /><span class="citation_source">' + $('#ctl00_ContentPlaceHolder1__citationArea__sourceDisplay').html() + '</span></p><p id="citation_reviserequest">Not what you were looking for? <a href="../ReviseRequest.aspx" title="Is this citation information incorrect? Edit the request.">Edit Request</a></p></div>';
 	 //$('#3834_body a,#3832_body a').addClass('journal-button');
@@ -75,6 +74,10 @@ $(window).resize(function() {
 		increment_fulltext += 1;
 	 });
 	 var full_text_links;
+	 var ulrichs_link = '';
+	 if($('#3878_body a')[0]){
+		ulrichs_link = ' | ' + $('#3878_body a').parent().html();
+	 }
 	 var ill_link = '<div id="ill"><label for="ill_link" id="ill_link_label">Not available online?</label> <span id="ill_link">' + $('#3863_Section a').parent().html() + '</span></div>';
 	 var additional_content = ill_link;
 	 if($('#3834_body')[0]){
@@ -90,7 +93,7 @@ $(window).resize(function() {
 			full_text_links = '<p><strong>No full text was found in library databases.</strong></p>' + ill_link;
 		}
 	 }
-	 additional_content += '<div id="supplemental_links"><p>Found a problem? <a href="mailto:librarysystems@sjfc.edu?subject=Bad%20Full%20Text%20Link&body=%0A%0AProblem%20URL:' + escape(document.URL) + '">Let our team of link fixers know!</a></p><p><a href="http://libguides.sjfc.edu/getitatfisher" title="Link to Get It @ Fisher FAQ"><img src="http://www.sjfc.edu/dotAsset/d7692022-c96f-422e-b23d-d53ddf75f33d.png" alt=""></a> Need help? <a href="http://libguides.sjfc.edu/getitatfisher">Get It @ Fisher FAQ</a> | <a href="http://atoz.ebsco.com/titles/13691">Find Journals by Title</a></p></div>';
+	 additional_content += '<div id="supplemental_links"><p>Found a problem? <a href="mailto:librarysystems@sjfc.edu?subject=Bad%20Full%20Text%20Link&body=%0A%0AProblem%20URL:' + escape(document.URL) + '">Let our team of link fixers know!</a></p><p><a href="http://libguides.sjfc.edu/getitatfisher" title="Link to Get It @ Fisher FAQ"><img src="http://www.sjfc.edu/dotAsset/d7692022-c96f-422e-b23d-d53ddf75f33d.png" alt=""></a> Need help? <a href="http://libguides.sjfc.edu/getitatfisher">Get It @ Fisher FAQ</a> | <a href="http://atoz.ebsco.com/titles/13691">Find Journals by Title</a>' + ulrichs_link + '</p></div>';
 	 //var additional_content = additional_content + $('#3878_Section a').parent().html();
 	 var library_footer = '<div id="library_footer">  A service of <a href="http://www.sjfc.edu/library/" title="Return to SJFC Lavery Library homepage">St. John Fisher College Lavery Library</a><br>  Library Research Help: (585)385-8141 | <a href="mailto:libraryreference@sjfc.edu" title="Email the librarians">libraryreference@sjfc.edu</a>  </div>';
 	 get_banner();
@@ -106,7 +109,7 @@ $(window).resize(function() {
 	 $('.primaryContainerTable').remove();
 	 /*hide error messages from their default table*/
 	 $('#ctl00_ContentPlaceHolder1__techSupport').parents('table').hide();
-     /*Hide the default footer*/
+	 /*Hide the default footer*/
 	 $('#ctl00__brandingPageFooter').remove();
 	 $('#ctl00__copyrightLabel').parents('table').hide();
  }
