@@ -8,13 +8,22 @@ Instructions:
 Insert this script into the footer of the library's LinkSource menu page via A-to-Z Admin.  
 
 Script by Ben Hockenberry, Systems Librarian, St. John Fisher College
+
+Notes for SJFC-specific codes
+*IMPORTANT* Replace all instances of each of these # codes with your section IDs, after reviewing your source code.  If you don't change these, your LinkSource page will appear as a blank page.  Bring in a library team member with javascript and HTML experience if you need an extra set of eyes.
+
+	#3863_Section - our section for interlibrary loan/document delivery links
+	#3834_body - our journal full text links section
+	#3832_body - our "catalog links" section, cues "This appears to be a book." message with a link to the catalog
+	#3878_body - our "additional information about this title" section, which contains only a link to Ulrichsweb.  Remove these sections if you do not offer a link to Ulrichs or a similar journal information service.
+
 */
 $(function() {
 
 /*Variable Declarations*/
 var banner_image = '';
 var banner_full = 'http://www.sjfc.edu/library/include/getfulltext_header.png';
-var banner_mobile = 'http://www.sjfc.edu/library/include/getfulltext_header_mobile.png';
+var banner_mobile = 'http://www.sjfc.edu/library/include/getfulltext_header_mobile.png'; /* Smaller banner file that fits on phones */
 
 /*
 Set a banner image that has higher text-to-full image ratio if on a small screen
@@ -42,7 +51,6 @@ $(window).resize(function() {
 	 $('#3863_Section').hide();
 	 //Build citation display into its own element, outside the table
 	 var citation_display = '<div id="citation_div"><h3>You searched for:</h3><p><span id="citation_title">&quot;' + $('#ctl00_ContentPlaceHolder1__citationArea__titleDisplay').html() + '&quot;</span><br /><span class="citation_source">' + $('#ctl00_ContentPlaceHolder1__citationArea__sourceDisplay').html() + '</span></p><p id="citation_reviserequest">Not what you were looking for? <a href="../ReviseRequest.aspx" title="Is this citation information incorrect? Edit the request.">Edit Request</a></p></div>';
-	 //$('#3834_body a,#3832_body a').addClass('journal-button');
 	 var increment_fulltext = 1;
 	 $('#3834_body a').each(function(){
 		$(this).addClass('journal-button');
